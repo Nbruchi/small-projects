@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3d Image Gallery</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <main class="container">
+            <section class="box">
+                <span style="--i: 1"
+                    ><img src="images/gymBoy1.jpeg" alt="gymBoy1"
+                /></span>
+                <span style="--i: 2"
+                    ><img src="images/gymGirl1.jpeg" alt="gymGirl1"
+                /></span>
+                <span style="--i: 3"
+                    ><img src="images/gymBoy2.jpeg" alt="gymBoy2"
+                /></span>
+                <span style="--i: 4"
+                    ><img src="images/gymGirl2.jpeg" alt="gymGirl2"
+                /></span>
+                <span style="--i: 5"
+                    ><img src="images/gymBoy3.jpeg" alt="gymBoy3"
+                /></span>
+                <span style="--i: 6"
+                    ><img src="images/gymGirl3.jpeg" alt="gymGirl3"
+                /></span>
+                <span style="--i: 7"
+                    ><img src="images/gymBoy4.jpeg" alt="gymBoy4"
+                /></span>
+                <span style="--i: 8"
+                    ><img src="images/gymGirl4.jpeg" alt="gymGirl4"
+                /></span>
+            </section>
+            <section class="btns">
+                <div class="btn prev"></div>
+                <div class="btn next"></div>
+            </section>
+        </main>
+        <script>
+            const prev = document.querySelector(".prev");
+            const next = document.querySelector(".next");
+            const box = document.querySelector(".box");
+
+            let degrees = 0;
+            prev.addEventListener("click", () => {
+                degrees += 45;
+                box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`;
+            });
+
+            next.addEventListener("click", () => {
+                degrees -= 45;
+                box.style = `transform: perspective(1000px) rotateY(${degrees}deg)`;
+            });
+        </script>
+    </body>
+</html>
